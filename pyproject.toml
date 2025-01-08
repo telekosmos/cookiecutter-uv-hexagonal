@@ -1,10 +1,10 @@
 [project]
-name = "cookiecutter-uv"
+name = "cookiecutter-uv-hexagonal"
 version = "0.0.1"
-description = "A python cookiecutter application to create a new python project that uses uv to manage its dependencies."
-authors = [{ name = "Florian Maas", email = "fpgmaas@gmail.com" }]
+description = "A python cookiecutter application to create a new python project following hexagonal architecture that uses uv to manage its dependencies."
+authors = [{ name = "Florian Maas", email = "fpgmaas@gmail.com" }, { name = "telekosmos", email = "telekosmos@ymail.com" }]
 readme = "README.md"
-keywords = ['cookiecutter', 'template', 'uv']
+keywords = ['cookiecutter', 'template', 'uv', 'hexagonal']
 requires-python = ">=3.9,<4.0"
 dependencies = [
   "cookiecutter>=2.1.1"
@@ -50,10 +50,10 @@ requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["cookiecutter_uv"]
+packages = ["cookiecutter_uv_hexagonal"]
 
 [tool.setuptools.package-data]
-"cookiecutter_uv" = ["*"]
+"cookiecutter_uv_hexagonal" = ["*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -63,10 +63,10 @@ skip_empty = true
 
 [tool.coverage.run]
 branch = true
-source = ["cookiecutter_uv"]
+source = ["cookiecutter_uv_hexagonal"]
 
 [tool.mypy]
-files = ['cookiecutter_uv']
+files = ['cookiecutter_uv_hexagonal']
 disallow_untyped_defs = true
 disallow_any_unimported = true
 no_implicit_optional = true
