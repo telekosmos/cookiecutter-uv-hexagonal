@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from application.handlers.count_file_handler import CountFileHandler
-from application.queries.count_file_query import CountFileQuery
+from {{cookiecutter.project_slug}}.application.handlers.count_file_handler import CountFileHandler
+from {{cookiecutter.project_slug}}.application.queries.count_file_query import CountFileQuery
 
 
 class TerminalAdapter:

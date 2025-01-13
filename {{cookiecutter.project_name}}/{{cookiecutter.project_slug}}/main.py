@@ -1,7 +1,7 @@
-from adapters.repositories.file_reader import FileReaderAdapter
-from domain.services.file_processor_service import FileProcessorService
-from application.handlers.count_file_handler import CountFileHandler
-from adapters.terminal import TerminalAdapter
+from {{cookiecutter.project_slug}}.adapters.repositories.file_reader import FileReaderAdapter
+from {{cookiecutter.project_slug}}.domain.services.file_processor_service import FileProcessorService
+from {{cookiecutter.project_slug}}.application.handlers.count_file_handler import CountFileHandler
+from {{cookiecutter.project_slug}}.adapters.terminal import TerminalAdapter
 # from adapters.http import create_http_app
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-from domain.ports.file_reader_port import FileReaderPort
+from {{cookiecutter.project_slug}}.domain.ports.file_reader_port import FileReaderPort
 
 class FileReaderAdapter(FileReaderPort):
     """Implementation of the file reader port."""

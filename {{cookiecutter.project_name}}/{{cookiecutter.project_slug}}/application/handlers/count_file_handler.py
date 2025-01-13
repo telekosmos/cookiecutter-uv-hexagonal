@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from domain.services.file_processor_service import FileProcessorService
+from {{cookiecutter.project_slug}}.domain.services.file_processor_service import FileProcessorService
 
 
 class CountFileHandler:
