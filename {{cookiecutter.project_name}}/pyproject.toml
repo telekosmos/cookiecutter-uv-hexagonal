@@ -18,6 +18,14 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
+dependencies = [
+    "fastapi[standard]>=0.115.8",
+]
+
+[project.scripts]
+main_http = "{{cookiecutter.project_slug}}.main_http:start"
+main_terminal = "{{cookiecutter.project_slug}}.main_terminal:main"
+
 [project.urls]
 Homepage = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
 Repository = "https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}"
