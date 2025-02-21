@@ -1,18 +1,20 @@
 from {{cookiecutter.project_slug}}.domain.ports.file_processor_port import FileProcessorPort
 from {{cookiecutter.project_slug}}.domain.ports.file_reader_port import FileReaderPort
+from {{cookiecutter.project_slug}}.domain.ports.logger_port import LoggerPort
 
 
 class FileProcessorService(FileProcessorPort):
     """Service to process files and count words or characters."""
     
-    def __init__(self, file_reader: 'FileReaderPort'):
+    def __init__(self, logger: LoggerPort, file_reader: 'FileReaderPort'):
         self.file_reader = file_reader  # Dependency injection of the file reader
+        self.logger = logger
     
     def process(self, file_name: str, operations: list[str]) -> dict:
         """Processes the file and counts words and/or characters."""
         content = self.file_reader.read(file_name)
         result = {}
-        print(f"operations: {operations}")
+        self.logger.info(f"operations: {operations}")
         if "words" in operations:
             result["words"] = self.count_words(content)
         if "characters" in operations:

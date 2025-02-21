@@ -9,14 +9,16 @@ from {{cookiecutter.project_slug}}.adapters.http import create_http_app
 from {{cookiecutter.project_slug}}.application.handlers.count_file_handler import CountFileHandler
 from {{cookiecutter.project_slug}}.application.queries.count_file_query import CountFileQuery
 from {{cookiecutter.project_slug}}.domain.ports.file_processor_port import FileProcessorPort
+from {{cookiecutter.project_slug}}.domain.ports.logger_port import LoggerPort
 
 
 class TestHttpAdapter(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures before each test method."""
+        self.mock_logger = Mock(spec=LoggerPort)
         self.mock_processor = Mock(spec=FileProcessorPort)
         self.mock_handler = Mock(spec=CountFileHandler)
-        self.app = create_http_app(self.mock_handler)
+        self.app = create_http_app(self.mock_logger, self.mock_handler)
         self.client = TestClient(self.app)
 
 

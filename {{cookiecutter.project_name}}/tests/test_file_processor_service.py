@@ -1,11 +1,16 @@
 import unittest
 from {{cookiecutter.project_slug}}.domain.services.file_processor_service import FileProcessorService
+from {{cookiecutter.project_slug}}.domain.ports.logger_port import LoggerPort
+from {{cookiecutter.project_slug}}.adapters.null_logger import NullLoggerAdapter
+
+
 from unittest.mock import Mock
 
 class TestFileProcessorService(unittest.TestCase):
     def setUp(self):
+        self.logger = NullLoggerAdapter()
         self.file_reader = Mock()
-        self.service = FileProcessorService(self.file_reader)
+        self.service = FileProcessorService(self.logger, self.file_reader)
 
     def test_process_with_words_operation(self):
         # Arrange
