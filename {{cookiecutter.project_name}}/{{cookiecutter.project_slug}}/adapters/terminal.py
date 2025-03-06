@@ -17,7 +17,7 @@ class TerminalAdapter:
         file_name = input("Enter the file name: ")
         operations = input("Enter the operations (words, characters, or both): ").split(",")
 
-        config_allowed = self.config.get("application.operations")
+        config_allowed = self.config.get("application.operations", [])
         if not all(op in config_allowed for op in operations):
             self.logger.error(f"Invalid operation(s): {', '.join(operations)}")
             raise ValueError(f"Invalid operation(s): {', '.join(operations)}")
