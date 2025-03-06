@@ -1,0 +1,5 @@
+{
+    "application": {
+        "operations": ["words", "characters", "both"]
+    }
+}

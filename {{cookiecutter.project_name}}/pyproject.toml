@@ -19,6 +19,7 @@ classifiers = [
 ]
 
 dependencies = [
+    "config>=0.5.1",
     "fastapi[standard]>=0.115.8",
 ]
 
