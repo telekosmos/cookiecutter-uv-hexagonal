@@ -1,11 +1,9 @@
 import unittest
 from unittest.mock import Mock, patch
-from {
-
-import cookiecutter_uv_hexagonal{cookiecutter.project_slug}}.adapters.terminal import TerminalAdapter
+from {{cookiecutter.project_slug}}.adapters.terminal import TerminalAdapter
 from {{cookiecutter.project_slug}}.application.queries.count_file_query import CountFileQuery
 from {{cookiecutter.project_slug}}.application.handlers.count_file_handler import CountFileHandler
-from {{cookiecutter.project_slug}}domain.ports.config_port import ConfigPort
+from {{cookiecutter.project_slug}}.domain.ports.config_port import ConfigPort
 from {{cookiecutter.project_slug}}.domain.ports.logger_port import LoggerPort
 
 
